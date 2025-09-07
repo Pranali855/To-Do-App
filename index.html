@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>TO DO LIST</h1>
+    <div class="container" id="todoContainer">
+
+    </div>
+    <div class="input-container">
+        <input type="text" placeholder="Add a new task" class="task-input" id="taskInput">
+        <button class="add-button" onclick="addToDo()">Add</button>
+    </div>
+
+    <script>
+
+        let todoItems =[];
+
+        const loadCards = ()=>{
+            todoItemsFromStorage = JSON.parse(localStorage.getItem("todoItems") || "[]");
+            todoItems=todoItemsFromStorage;
+            const todoContainer = document.getElementById("todoContainer");
+            todoContainer.innerHTML="";
+            for(const todoItem of todoItems){
+                    todoContainer.innerHTML +=`
+                <div class="task-items">
+                    ${todoItem}
+                    <img src="delete.png" alt="" class="delete-icon" onclick="deleteToDo('${todoItem}')">
+                    </div>
+                `
+            }
+        };
+         loadCards();
+         const addToDo = ()=>{
+           const taskInput = document.getElementById("taskInput");
+           const newTodo= taskInput.value;
+          if(newTodo.trim()!=""){
+            todoItems.push(newTodo);
+            taskInput.value="";
+            localStorage.setItem("todoItems",JSON.stringify(todoItems));
+            loadCards();
+           }
+
+         };
+
+          const deleteToDo = (task)=>{
+            const index = todoItems.indexOf(task);
+            if(index>-1){
+                todoItems.splice(index,1);
+            localStorage.setItem("todoItems",JSON.stringify(todoItems));
+            loadCards();
+            }
+            
+          };
+     
+    </script>
+</body>
+
+</html>
