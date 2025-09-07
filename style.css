@@ -15,12 +15,12 @@ body{
     background: linear-gradient(to right, #e0f7fa, #ffffff);
 }
 .container{
-    max-width: 700px; ;
-    height: 450px;
+    max-width: 750px; ;
+    height: 400px;
     overflow-y: auto;
     margin: 20px auto;
     padding: 30px;
-    background-color: #A0E9FF;
+    background-color: rgb(225, 255, 164);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -29,8 +29,9 @@ body{
     color: #333;
     padding: 15px 20px;
     border-radius: 5px;
-     border-bottom: 2px solid #00A9FF;
-     border-left: 1px solid #00A9FF;
+     border-bottom: 2px solid #ff0ca2;
+     border-left: 1px solid  #ff0ca2;
+     border-right: 1px solid  #ff0ca2 ;
     margin: 10px 0;
     display: flex;
     justify-content: space-between; 
@@ -55,7 +56,7 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #CDF5FD;
+    background-color:  rgb(225, 255, 164);
     padding: 20px;
   
    
@@ -63,7 +64,7 @@ body{
 .task-input{
     width: 500px;
     padding: 10px 20px;
-    border: 2px solid #00A9FF;
+    border: 2px solid rgb(177, 255, 22);
    
     border-radius: 5px;
     font-size: 16px;
@@ -72,7 +73,7 @@ body{
 .add-button{
     padding: 10px 20px;
     margin-left: 10px;
-    background-color:#00A9FF;
+    background-color:#ff0ca2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -83,7 +84,7 @@ body{
 @media screen and (max-width: 600px) {
     .container {
         width: 90%;
-        height: 400px;
+        height: 500px;
         padding: 20px;
     }
     .task-input {
@@ -93,5 +94,55 @@ body{
     .add-button {
         padding: 10px 15px;
         font-size: 14px;
+    }
+}
+/* ===== Small Devices (phones) ===== */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+    .task-input {
+        width: 65%;
+        font-size: 14px;
+    }
+    .add-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* ===== Medium Devices (tablets) ===== */
+@media screen and (max-width: 900px) and (min-width: 601px) {
+    .container {
+        width: 85%;
+        height: auto;
+        padding: 20px;
+    }
+    .task-input {
+        width: 70%;
+        font-size: 15px;
+    }
+    .add-button {
+        padding: 9px 15px;
+        font-size: 15px;
+    }
+}
+
+/* ===== Large Devices (small laptops/desktops) ===== */
+@media screen and (max-width: 1200px) and (min-width: 901px) {
+    .container {
+        width: 70%;
+        height: auto;
+        padding: 25px;
+    }
+    .task-input {
+        width: 75%;
+        font-size: 16px;
+    }
+    .add-button {
+        padding: 10px 18px;
+        font-size: 16px;
     }
 }
